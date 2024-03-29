@@ -3,8 +3,6 @@ import { BookType, Purchase } from "./types/types";
 import { getAllBooks } from "./lib/microcms/client";
 import { getServerSession } from "next-auth";
 import { nextAuthOptions } from "./lib/next-auth/options";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 export default async function Home() {
   // const [books, setBooks] = useState<BookType[]>([]);
