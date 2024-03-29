@@ -14,6 +14,7 @@ export default async function Home() {
   const user: any = session?.user;
 
   const { contents } = await getAllBooks();
+
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/purchases/${user.id}`
   );
