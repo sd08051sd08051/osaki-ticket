@@ -9,9 +9,8 @@ export const client = createClient({
 export const getAllBooks = async () => {
   const allBooks = await client.get({
     endpoint: "osaki-ticket",
-    queries: {
-      offset: 0,
-      limit: 10,
+    customRequestInit: {
+      cache: "no-store",
     },
   });
 
@@ -22,6 +21,9 @@ export const getDetailBook = async (contentId: string) => {
   const detailBook = await client.getListDetail<BookType>({
     endpoint: "osaki-ticket",
     contentId,
+    customRequestInit: {
+      cache: "no-store",
+    },
   });
 
   return detailBook;
